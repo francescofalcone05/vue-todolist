@@ -20,7 +20,7 @@
             <input type="text" v-model="inputValue" placeholder="Inserisci altre cose da fare.."> <button
                 @click="changeValue()">Aggiungi alla lista</button>
             <ul>
-                <li :class="changeColor(i)" v-for="elemento, i in toDoList"><span><i @click="cliccaSeleziona(i)" :class="changeColor(i)" class="fa-regular fa-square-check"></i></span>{{ elemento }}</li>
+                <li v-for="elemento, i in toDoList"><span><i @click="cliccaSeleziona(i)" class="fa-regular fa-square-check"></i></span>{{ elemento }}</li>
             </ul>
         </div>
 
