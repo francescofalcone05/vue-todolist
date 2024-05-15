@@ -6,8 +6,6 @@ createApp({
       message: 'To do list !',
       inputValue: '',
       printValue: '',
-      selectDone: 0,
-      color: '',
       toDoList: [
         {
           text: 'Creare un`array di cose da fare',
@@ -34,25 +32,16 @@ createApp({
         this.toDoList.push(this.printValue);
       this.inputValue = '';
     },
-    cliccaSeleziona(indice,) {
-      this.selectDone = indice
-      this.toDoList.splice(indice,1)
+    cliccaSeleziona(indice) {
+      this.toDoList[indice].done = !this.toDoList[indice].done
+    },
+    getColor(indice) {
+      if (this.toDoList[indice].done == false) {
+        return 'green'
+      } else {
+        return ''
+      }
     }
-    // cliccaSeleziona(indice, elemento) {
-    //   this.selectDone = indice
-    //   elemento[indice].done = false
-    //},
-    // cliccaSeleziona(indice,) {
-    //   this.selectDone = indice;
-    // },
-    // changeColor(indice){
-    //   if (this.selectDone==indice){
-    //     (this.color == '') ? this.color = 'green' : this.color = ''
-    //   }else{
-    //     this.color = ''
-    //   }
-    // }
-
   },
   mounted() {
   }
